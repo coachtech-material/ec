@@ -13,7 +13,7 @@ class CartItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -23,17 +23,5 @@ class CartItemRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'quantity' => ['required', 'integer', 'min:1']
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'quantity.required' => '数量を入力してください',
-            'quantity.integer' => '数量を整数で入力してください',
-            'quantity.min' => '数量を1以上で入力してください'
-        ];
     }
 }

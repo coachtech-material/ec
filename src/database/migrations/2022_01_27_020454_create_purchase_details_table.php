@@ -15,9 +15,6 @@ class CreatePurchaseDetailsTable extends Migration
     {
         Schema::create('purchase_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('item_id')->constrained()->cascadeOnDelete();
-            $table->unsignedBigInteger('purchase_history_id')->constrained()->cascadeOnDelete();
-            $table->integer('quantity');
             $table->timestamps();
         });
     }

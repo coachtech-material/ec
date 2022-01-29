@@ -9,20 +9,4 @@ use Illuminate\Support\Facades\Auth;
 class CartItem extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'user_id',
-        'item_id',
-        'quantity'
-    ];
-
-    public function item()
-    {
-        return $this->belongsTo(Item::class);
-    }
-
-    public function scopeUserSearch($query)
-    {
-        $query->where('user_id', Auth::id());
-    }
 }

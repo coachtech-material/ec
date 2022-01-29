@@ -15,9 +15,6 @@ class CreateCartItemsTable extends Migration
     {
         Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->constrained()->cascadeOnDelete();
-            $table->unsignedBigInteger('item_id')->constrained()->cascadeOnDelete();
-            $table->integer('quantity');
             $table->timestamps();
         });
     }
